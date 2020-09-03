@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MongoDBRepositorySimple.Repository
 {
-    public interface ISimpleRepository
+    public interface ISimpleRepository : IDisposable
     {
         Task<List<SimpleModel>> GetSimplesAsync();
     }
