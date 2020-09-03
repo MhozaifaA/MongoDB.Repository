@@ -1,6 +1,5 @@
 ﻿using MongoDB.Driver;
 using MongoDB.Repository;
-using MongoDB.Server;
 using MongoDBRepositorySimple.Model;
 using System;
 using System.Collections.Generic;

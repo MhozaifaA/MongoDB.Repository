@@ -1,7 +1,6 @@
 ﻿using MongoDB.Driver;
-using System.Threading.Tasks;
 
-namespace MongoDB.Server
+namespace MongoDB.Repository
 {
     /// <summary>
     /// context with mongoDB lifetime 

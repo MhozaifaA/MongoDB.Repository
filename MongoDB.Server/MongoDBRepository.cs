@@ -1,5 +1,4 @@
 ﻿using MongoDB.Driver;
-using MongoDB.Server;
 using PluralizeService.Core;
 
 namespace MongoDB.Repository

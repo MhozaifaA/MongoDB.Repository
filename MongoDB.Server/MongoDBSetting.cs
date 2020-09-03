@@ -1,5 +1,5 @@
 ﻿
-namespace MongoDB.Server
+namespace MongoDB.Repository
 {
     /// <summary>
     /// Configuration appsettings ,

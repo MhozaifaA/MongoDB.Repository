@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MongoDB.Server\MongoDB.Server.csproj" />
+    <ProjectReference Include="..\MongoDB.Server\MongoDB.Repository.csproj" />
   </ItemGroup>
 
 

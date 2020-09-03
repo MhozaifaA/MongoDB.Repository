@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MongoDBRepositorySimple.Model;
 using MongoDBRepositorySimple.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MongoDBRepositorySimple.Controllers

@@ -11,7 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MongoDB.Server;
+using MongoDB.Repository;
+using MongoDB.Repository.Configure;
 using MongoDBRepositorySimple.Repository;
 
 namespace MongoDBRepositorySimple
@@ -30,18 +31,10 @@ namespace MongoDBRepositorySimple
         {
             services.AddControllers();
 
-
-            services.Configure<MongoDBSetting>(
+            services.AddMongoDBRepository(
                 Configuration.GetSection(nameof(MongoDBSetting)));
 
-            services.AddSingleton<IMongoDBSetting>(sp =>
-                sp.GetRequiredService<IOptions<MongoDBSetting>>().Value);
-
-
-            services.AddSingleton<MongoDBService>();
-
             services.AddSingleton<ISimpleRepository, SimpleRepository>();
-
 
         }
 
