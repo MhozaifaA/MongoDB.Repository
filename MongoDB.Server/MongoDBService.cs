@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using PluralizeService.Core;
 
 namespace MongoDB.Repository
 {
@@ -20,7 +21,8 @@ namespace MongoDB.Repository
         {
             if (names is null) return;
             foreach (var name in names)
-                MongoService.CreateCollectionAsync(name);
+                MongoService.CreateCollectionAsync(
+                    PluralizationProvider.Pluralize(name));
         }
     }
 }

@@ -14,9 +14,18 @@ namespace MongoDBRepositorySimple.Repository
 
         public async Task<List<SimpleModel>> GetSimplesAsync()
         {
+          await Seed();
           return  await Context.Find(s => true).ToListAsync();
         }
 
+        // add 10-DATA every reqest 
+        private async Task Seed()
+        {
+            List<SimpleModel> list = new List<SimpleModel>();
+            for (int i = 0; i < 10; i++)
+                list.Add(new SimpleModel() { Simple = i.ToString()+"$"+Guid.NewGuid() });
+            await Context.InsertManyAsync(list);
+        }
 
 
         private bool disposed = false;
