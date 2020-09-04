@@ -31,6 +31,8 @@ public void ConfigureServices(IServiceCollection services)
 
     services.AddMongoDBRepository(
         Configuration.GetSection(nameof(MongoDBSetting)));
+        
+        
   //inject singleton Repositories  
     services.AddSingleton<ISimpleRepository, SimpleRepository>();
     //services.AddSingleton<//other>()....
@@ -52,7 +54,7 @@ using MongoDB.Repository;
 <br/>
 ```C#
 using MongoDB.Repository;
- public class SimpleRepository : MongoDBRepository<SimpleModel>
+ public class SimpleRepository : MongoDBRepository<SimpleModel> ,ISimpleRepository
  {
   public SimpleRepository(MongoDBService context) : base(context) { }
   
