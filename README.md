@@ -9,12 +9,11 @@ easy  injection MonggDB.Driver  with Repository Pattern
   "MongoDBSetting": {
     "ConnectionString": "mongodb://localhost:27017",
     "DatabaseName": "SimpleDB",
-     // unnecessary CollectionsNames
     "CollectionsNames": [ "SimpleModel", "Blogs" ]
-     //Plural and singular name of Entities .. each singular --> Plural  , Plural --> Plural
   },
 ```
-
+  // unnecessary CollectionsNames
+ //Plural and singular name of Entities .. each singular --> Plural  , Plural --> Plural
 
 **Startup.cs**
 <br/>
