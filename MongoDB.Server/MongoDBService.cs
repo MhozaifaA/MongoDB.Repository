@@ -17,7 +17,7 @@ namespace MongoDB.Repository
             CreateCollection(settings?.CollectionsNames);
         }
 
-        private void CreateCollection(string[] names)
+        public void CreateCollection(params string[] names)
         {
             if (names is null) return;
             foreach (var name in names)

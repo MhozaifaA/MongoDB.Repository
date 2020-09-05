@@ -12,10 +12,19 @@ namespace MongoDBRepositorySimple.Repository
     {
         public SimpleRepository(MongoDBService context) : base(context) { }
 
-        public async Task<List<SimpleModel>> GetSimplesAsync()
+        public async Task<object> GetSimplesAsync()
         {
-          await Seed();
-          return  await Context.Find(s => true).ToListAsync();
+            //will throw eception until pass true or   MongoDBRepository<SimpleModel,Foo> , Foo should inherent BaeEntity
+            //var data = await Context<Foo>(true).AsQueryable().ToListAsync();
+
+            // create and use fine  , out of  MongoDBRepository<SimpleModel>
+            var data = await Context<Foo>(true).AsQueryable().ToListAsync();
+
+            await Seed();
+
+            // two way to use
+            // await Context<SimpleModel>().Find(s => true).ToListAsync();
+            return await Context1.Find(s => true).ToListAsync();
         }
 
         // add 10-DATA every reqest 
@@ -24,7 +33,7 @@ namespace MongoDBRepositorySimple.Repository
             List<SimpleModel> list = new List<SimpleModel>();
             for (int i = 0; i < 10; i++)
                 list.Add(new SimpleModel() { Simple = i.ToString()+"$"+Guid.NewGuid() });
-            await Context.InsertManyAsync(list);
+            await Context1.InsertManyAsync(list);
         }
 
 

@@ -15,7 +15,7 @@ namespace MongoDBRepositorySimple.Controllers
             _SimpleRepository = SimpleRepository;
         }
 
-        public async Task<ActionResult<List<SimpleModel>>> Get() =>
+        public async Task<ActionResult<object>> Get() =>
           await _SimpleRepository.GetSimplesAsync();
     }
 }

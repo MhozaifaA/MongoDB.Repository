@@ -8,6 +8,6 @@ namespace MongoDBRepositorySimple.Repository
 {
     public interface ISimpleRepository : IDisposable
     {
-        Task<List<SimpleModel>> GetSimplesAsync();
+        Task<object> GetSimplesAsync();
     }
 }
