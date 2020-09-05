@@ -44,10 +44,11 @@ public void ConfigureServices(IServiceCollection services)
 <br/>
 using MongoDB.Repository;
 ```C#
+using MongoDB.Repository;
  public class SimpleModel :BaseEntity
-    {
-        //..
-    }
+  {
+      //..
+  }
 ```
 
 **Repository**
@@ -62,6 +63,16 @@ using MongoDB.Repository;
  
 ```
 
+**How use in repo**
+<br/>
+```C#
+// same type passed to MongoDBRepository<> 
+Context1..  or Context<yourEntity>()..
+``` 
+
+***otherwise use ``Context<EntityOutOFgeneric>(true)`` to creat if not exist or used out of repo and flexible handle in runtime***
+
+
 <br/>
 
 ### Extension 
@@ -73,3 +84,8 @@ MongoDBRepository<T1, T2,....,T5>  Contex1....Contex15
 
 no need to **using MongoDB.Driver** if using **Context.AsQueryable()** to linq 
 
+### Simple
+check simple 
+https://github.com/MhozaifaA/MongoDB.Repository/blob/master/MongoDBRepositorySimple/Repository/SimpleRepository.cs
+<br/>
+<h1>     😊 injoy ..<h1>
