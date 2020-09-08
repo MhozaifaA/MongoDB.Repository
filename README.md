@@ -41,7 +41,6 @@ public void ConfigureServices(IServiceCollection services)
 ```
 **Model**
 <br/>
-using MongoDB.Repository;
 ```C#
 using MongoDB.Repository;
  public class SimpleModel :BaseEntity
@@ -69,7 +68,7 @@ using MongoDB.Repository;
 Context1..  or Context<yourEntity>()..
 ``` 
 
-***otherwise use ``Context<EntityOutOFgeneric>(true)`` to creat if not exist or used out of repo and flexible handle in runtime***
+***otherwise use ``Context<EntityOutOFgeneric>(true)`` to create if not exist or used out of repo and flexible handle in runtime***
 
 
 <br/>
@@ -87,4 +86,4 @@ no need to **using MongoDB.Driver** if using **Context.AsQueryable()** to linq
 check simple 
 https://github.com/MhozaifaA/MongoDB.Repository/blob/master/MongoDBRepositorySimple/Repository/SimpleRepository.cs
 <br/>
-<h1>     😊 injoy ..<h1>
+<h1>     😊 enjoy ..<h1>
