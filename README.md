@@ -1,5 +1,10 @@
 # MongoDB.Repository
 easy  injection MonggDB.Driver  with Repository Pattern
+
+## Download
+
+> https://www.nuget.org/packages/MhozaifaA.MongoDB.Repository
+
 ## How to use
 
 **appsettings.json**
