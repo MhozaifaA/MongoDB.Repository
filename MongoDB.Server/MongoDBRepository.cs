@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using MongoDB.Repository.Base;
 using PluralizeService.Core;
 using System;
@@ -14,15 +15,13 @@ namespace MongoDB.Repository
     {
         protected readonly IMongoCollection<T1> Context1;
 
-        private MongoDBService context;
-        protected MongoDBRepository(MongoDBService context)
+        protected MongoDBService context;
+        public MongoDBRepository(MongoDBService context)
         {
             this.context = context;
             Context1 = context.MongoService.GetCollection<T1>(PluralizationProvider.Pluralize(typeof(T1).Name));
         }
 
-
-     
         protected override IMongoCollection<T> Context<T>(bool IsExtendEntity = false)
         {
             Type _type = typeof(T);
@@ -52,8 +51,8 @@ namespace MongoDB.Repository
         protected readonly IMongoCollection<T1> Context1;
         protected readonly IMongoCollection<T2> Context2;
 
-        private MongoDBService context;
-        protected MongoDBRepository(MongoDBService context)
+        protected MongoDBService context;
+        public MongoDBRepository(MongoDBService context)
         {
             this.context = context;
             Context1 = context.MongoService.GetCollection<T1>(PluralizationProvider.Pluralize(typeof(T1).Name));
@@ -96,8 +95,8 @@ namespace MongoDB.Repository
         protected readonly IMongoCollection<T2> Context2;
         protected readonly IMongoCollection<T3> Context3;
 
-        private MongoDBService context;
-        protected MongoDBRepository(MongoDBService context)
+        protected MongoDBService context;
+        public MongoDBRepository(MongoDBService context)
         {
             this.context = context;
             Context1 = context.MongoService.GetCollection<T1>(PluralizationProvider.Pluralize(typeof(T1).Name));
@@ -146,8 +145,8 @@ namespace MongoDB.Repository
         protected readonly IMongoCollection<T3> Context3;
         protected readonly IMongoCollection<T4> Context4;
 
-        private MongoDBService context;
-        protected MongoDBRepository(MongoDBService context)
+        protected MongoDBService context;
+        public MongoDBRepository(MongoDBService context)
         {
             this.context = context;
             Context1 = context.MongoService.GetCollection<T1>(PluralizationProvider.Pluralize(typeof(T1).Name));
@@ -201,8 +200,8 @@ namespace MongoDB.Repository
         protected readonly IMongoCollection<T4> Context4;
         protected readonly IMongoCollection<T5> Context5;
 
-        private MongoDBService context;
-        protected MongoDBRepository(MongoDBService context)
+        protected MongoDBService context;
+        public MongoDBRepository(MongoDBService context)
         {
             this.context = context;
             Context1 = context.MongoService.GetCollection<T1>(PluralizationProvider.Pluralize(typeof(T1).Name));
